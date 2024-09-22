@@ -1,12 +1,22 @@
 .header{
     background-color: #333;
     color: white;
-    padding: 10px;
-    text-align: center;
     font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
+    align-items: center;
+}
+
+.header .logo{
+    margin-right: 10px;
+    width: 80px;
 }
 
 .weather-card{
     display: block;
     max-width: 350px;
+}
+
+.flag {
+    width: 30px;
 }

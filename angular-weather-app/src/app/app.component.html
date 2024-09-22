@@ -1,12 +1,13 @@
-<div class="header">
-  <h1>Weather Search</h1>
+<div class="header p-3 d-flex justify-content-start">
+  <img class="logo me-5" src="assets/icon.png" alt="logo">
+  <h1>World Weather</h1>
 </div>
 
 <div class="container pt-5">
   <div class="input-group mb-3">
     <div class="form-floating">
       <input [(ngModel)]="citySearch" type="text" list="optionsList" id="searchInput" class="form-control" placeholder="Enter city name" (keyup.enter)="searchCity()" />
-      <label for="searchInput">Search a city</label>
+      <label for="searchInput">Enter city name</label>
     </div>
     <button class="btn btn-outline-secondary" type="button" id="searchButton" (click)="searchCity()">Search</button>
   </div>
@@ -14,7 +15,8 @@
   <div class="row" *ngIf="city">
     <div class="col-6 text-end">
       <h2>{{city.name}}</h2>
-      <p>{{city.country}}</p>
+      <p><img class="flag" src="https://flagcdn.com/48x36/{{city.sys.country.toLowerCase()}}.png"> {{city.countryName}}</p>
+      <p>Local time {{city.time}}</p>
     </div>
     <div class="col-6">
       <app-weather-card class="weather-card" [city]="city"></app-weather-card>
