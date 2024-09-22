@@ -1,0 +1,27 @@
+<div class="card">
+    <img class="card-img-top img" [src]="city.weather[0].iconUrl" alt="weather icon">
+    <div class="card-body">
+        <div class="row fw-bold fs-4">
+            <div class="col">
+                <span class="card-text">{{city.weather[0].main}}</span>
+            </div>
+            <div class="col">
+                <span class="card-text">{{city.main.temp}} °C</span>
+            </div>
+        </div>
+        <div class="row fs-6 text-muted mb-3">
+            <div class="col">
+                <span>{{city.weather[0].description}}</span>
+            </div>
+            <div class="col">
+                <span>Feels like {{city.main.feels_like}} °C</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="mb-0 card-text">Humidity: {{city.main.humidity}}%</p>
+                <p class="card-text">Wind speed: {{city.wind.speed}} m/s</p>
+            </div>
+        </div>
+    </div>
+</div>

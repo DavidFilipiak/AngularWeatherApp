@@ -3,21 +3,22 @@
 </div>
 
 <div class="container pt-5">
-  <div class="form-group">
-    <label for="searchInput">Search a city</label>
-    <div class="input-group mb-3">
-      <input [(ngModel)]="citySearch" type="text" list="optionsList" id="searchInput" class="form-control" placeholder="Enter city name" />
-      <button class="btn btn-outline-secondary" type="button" id="searchButton" (click)="searchCity()">Search</button>
+  <div class="input-group mb-3">
+    <div class="form-floating">
+      <input [(ngModel)]="citySearch" type="text" list="optionsList" id="searchInput" class="form-control" placeholder="Enter city name" (keyup.enter)="searchCity()" />
+      <label for="searchInput">Search a city</label>
+    </div>
+    <button class="btn btn-outline-secondary" type="button" id="searchButton" (click)="searchCity()">Search</button>
+  </div>
+
+  <div class="row" *ngIf="city">
+    <div class="col-6 text-end">
+      <h2>{{city.name}}</h2>
+      <p>{{city.country}}</p>
+    </div>
+    <div class="col-6">
+      <app-weather-card class="weather-card" [city]="city"></app-weather-card>
     </div>
   </div>
-</div>
-
-<div class="container pt-3" *ngIf="city">
-  <p>City: {{city.name}}</p>
-  <p>Country: {{city.sys.country}}</p>
-  <img [src]="city.weather[0].iconUrl" alt="weather icon" />
-  <p>Temperature: {{city.main.temp}} °C </p>
-  <p>Humidity: {{city.main.humidity}}%</p>
-  <p>Wind speed: {{city.wind.speed}} m/s</p>
 </div>
 

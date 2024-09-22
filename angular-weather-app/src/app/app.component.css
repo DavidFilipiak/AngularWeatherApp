@@ -5,3 +5,8 @@
     text-align: center;
     font-weight: bold;
 }
+
+.weather-card{
+    display: block;
+    max-width: 350px;
+}
